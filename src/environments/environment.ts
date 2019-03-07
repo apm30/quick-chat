@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyAU1JSRY5iWjepaD4TUY3_hFbUEp4bkGuo',
+    authDomain: 'quickchat-da445.firebaseapp.com',
+    databaseURL: 'https://quickchat-da445.firebaseio.com',
+    projectId: 'quickchat-da445',
+    storageBucket: '',
+    messagingSenderId: '874127052491'
+  }
 };
 
 /*
