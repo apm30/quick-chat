@@ -6,9 +6,12 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainComponent } from './main/main.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MainComponent, SignInComponent, MyPostsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
