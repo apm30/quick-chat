@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-posts.component.scss']
 })
 export class MyPostsComponent implements OnInit {
+  opened = true;
+  events = new Array();
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
