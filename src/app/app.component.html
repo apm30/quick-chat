@@ -1,6 +1,12 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
     <mat-toolbar color="primary">Options</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="sidenav.toggle()" [routerLink]="[ '/']">All posts</a>
+      <a mat-list-item (click)="sidenav.toggle()" [routerLink]="[ '/myposts']">My posts</a>
+      <hr>
+      <a mat-list-item (click)="sidenav.toggle()">Sign out</a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary"><button mat-button (click)="sidenav.toggle()">
