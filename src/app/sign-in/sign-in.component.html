@@ -1,3 +1,8 @@
-<p>
-  sign-in works!
-</p>
+<div fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxLayoutAlign="none canter">
+    <mat-card-title>
+      You must be signed up to use the app
+    </mat-card-title>
+    <button mat-button (click)="authService.signInWithGoogle()">Sign in with google</button>
+  </mat-card>
+</div>
