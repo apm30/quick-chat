@@ -43,13 +43,19 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     SignInComponent,
-    MyPostsComponent
+    MyPostsComponent,
+    CreatePostComponent,
+    PostListComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
