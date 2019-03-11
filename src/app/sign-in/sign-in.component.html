@@ -1,8 +1,17 @@
 <div fxLayoutAlign="center center">
-  <mat-card fxLayout="column" fxLayoutAlign="none canter">
+  <mat-card *ngIf="!(authService.isSignedInStream | async);else signedInTemplate" fxLayout="column" fxLayoutAlign="none canter">
     <mat-card-title>
       You must be signed up to use the app
     </mat-card-title>
     <button mat-button (click)="authService.signInWithGoogle()">Sign in with google</button>
   </mat-card>
+  <ng-template #signedInTemplate>
+    <mat-card fxLayout="column" fxLayoutAlign="none canter">
+      <mat-card-title>
+        You are signed in as {{authService.displayName}}
+      </mat-card-title>
+      <button mat-button (click)="authService.signOut()">Sign out</button>
+    </mat-card>
+  </ng-template>
+
 </div>
