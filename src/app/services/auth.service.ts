@@ -10,12 +10,15 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
   public isSignedInStream: Observable<boolean>;
+  public displayName: string;
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user) {
         console.log('user signed in as ', user);
+        this.displayName = user.displayName;
       } else {
         console.log('user not signed in');
+        this.displayName = '';
       }
     });
     this.isSignedInStream = this.afAuth.authState.pipe(
