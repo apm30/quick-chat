@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  public isSignedInStream: Observable<boolean>;
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.authState.subscribe((user: firebase.User) => {
       if (user) {
@@ -15,6 +18,11 @@ export class AuthService {
         console.log('user not signed in');
       }
     });
+    this.isSignedInStream = this.afAuth.authState.pipe(
+      map<firebase.User, boolean>((user: firebase.User) => {
+        return user != null;
+      })
+    );
   }
 
   signInWithGoogle(): void {
