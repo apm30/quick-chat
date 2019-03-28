@@ -1,8 +1,10 @@
 <mat-card fxLayout="row">
   <img [src]="authService.photoUrl" alt="Photo">
-  <mat-form-field fxFlex divideColor="primary">
-    <input matInput type="text" placeholder="Make a post" required>
-    <!-- <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"> -->
-    <!-- </button> -->
-  </mat-form-field>
+  <form fxFlex fxLayout (ngSubmit)="onSubmit(form)">
+    <mat-form-field fxFlex divideColor="primary">
+      <input matInput type="text" placeholder="Make a post" required [(ngModel)]="postBodyText" name="postBodyText">
+      <!-- <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"> -->
+      <!-- </button> -->
+    </mat-form-field>
+  </form>
 </mat-card>
